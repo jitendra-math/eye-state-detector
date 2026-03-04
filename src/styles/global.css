@@ -1,0 +1,142 @@
+/* src/styles/global.css */
+
+/* ---------- CSS Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Root Theme ---------- */
+:root {
+  --bg-dark: #05060a;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --border-glass: rgba(255, 255, 255, 0.08);
+
+  --text-main: #e6e8ee;
+  --text-dim: #8b90a0;
+
+  --accent: #6ee7ff;
+  --danger: #ff5c7a;
+  --success: #4ade80;
+}
+
+/* ---------- Body ---------- */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    "Helvetica Neue", Arial, sans-serif;
+
+  background: radial-gradient(circle at 20% 20%, #0d111a, #040507 70%);
+  color: var(--text-main);
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Main Container ---------- */
+.app {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* ---------- Glass Card ---------- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+
+  padding: 18px;
+}
+
+/* ---------- Camera Wrapper ---------- */
+.camera-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* Video feed */
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* Canvas overlay */
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ---------- Status Panel ---------- */
+.status-panel {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* ---------- Status Indicators ---------- */
+.status-open {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.status-closed {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* ---------- Blink Counter ---------- */
+.blink-count {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ---------- Warning Message ---------- */
+.warning {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+
+  background: rgba(255, 92, 122, 0.08);
+  border: 1px solid rgba(255, 92, 122, 0.25);
+  color: var(--danger);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .app {
+    padding: 14px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+}
